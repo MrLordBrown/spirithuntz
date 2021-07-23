@@ -1,0 +1,256 @@
+@start
+
+	*say
+		Welcome to the house. Please state your name for the record.
+
+	*then
+		slot playerName to 'AMAZON.US_FIRST_NAME'
+        hear {playerName}, my name is {playerName}, i am {playerName} {
+            -> instructions
+	    }
+
+@instructions
+	*say
+		{playerName}, I see.  I would welcome you but there is not much time and, well frankly, you are most likely not welcome.  This house is haunted and none other than the great Spirit Hunter {playerName} shall vanquish the accursed from the halls of this home.  Listen carefully, follow the clues, and use your equipment wisely and you may make it out alive. Shall we begin?
+	*then
+		hear who are you?, what is your name?, what are you doing here? {
+			-> who me
+		}
+
+		hear yes, sure, why not, okay, alright, you got it, cool {
+			-> equipment
+		}
+
+		hear nope, no way, no, no mam, nada {
+			-> end
+		}
+
+@who me
+	*say
+		Who am I?  Why, I am an angel; I am a cricket; I am a dandelion wish from upon high; here to see that you succeed at your task despite your shortcomings and fragile knowlede of what truly lies beyond.  I am the headmaster and the conductor; I am the only way you will survive the night.  With that said . . .
+	*then
+		-> equipment
+
+@equipment
+	*say
+		You should equipped yourself with some of the latest in ghost hunting technology and mytsical spells.  You may carry three items.  You can choose from an EMF detector, spirit box, infrared detector, binding ritual, banishment ritual, torch, and a tesla coil.  I you would like more information on these items, simply say help and the item name and I'll tell you about it. So, what are your selections?
+
+	*reprompt
+		Your equipment options are an EMF detector, spirit box, infrared detector, binding ritual, banishment ritual, torch, and a tesla coil. Please select your equipment.
+	
+	*then
+		flag equipA
+		unflag equipB
+		unflag equipC
+		unflag start
+		slot equipmentOne to 'equipmentOne'
+		slot equipmentTwo to 'equipmentTwo'
+		slot equipmentThree to 'equipmentThree'
+		hear {equipmentOne} {equipmentTwo} {equipmentThree}, I'll take {equipmentOne} {equipmentTwo} and {equipmentThree}, give me {equipmentOne} {equipmentTwo} and {equipmentThree} {
+			set e1 as equipmentOne
+			set e2 as equipmentTwo
+			set e3 as equipmentThree
+
+			if !e1 || !e2 || !e3 {
+				-> invalid
+			}
+
+			if e1 === e2 || e2 === e3 || e1 === e3 {
+				-> invalid
+			}
+
+			-> setup
+		}
+
+@setup
+	*say
+		You have selected the {e1}, {e2}, and {e3} for your equipment.  Do remember that you always have a flashlight and a digital camera on you, as well. We will now check your equipment before we proceed.  Your flashlight is on and functioning.  Your camera is operational.
+	*recap
+		So you have that.  Next . . .
+	*then
+		flag flashlight
+		flag camera
+		
+		if equipA {
+			-> {e1}
+		}
+
+		if equipB {
+			-> {e2}
+		}
+
+		if equipC {
+			-> {e3}
+		}
+
+		if start {
+			->begin
+		}
+
+
+@EMF detector
+	*say
+		The EMF detector is on and registering.
+	*then
+		flag EMF
+		->rotate
+
+@spirit box
+	*say
+		The spirit box is on and noisy.
+	*then
+		flag spiritBox
+		->rotate
+
+@infrared detector
+	*say
+		The IR detector is on and registering.
+	*then
+		flag IR
+		-> rotate
+
+@binding ritual
+	*say
+		The components for this spell have been collected and you have memorized the incantation.
+	*then
+		flag binding
+		->rotate
+
+@banishment ritual
+	*say
+		The components for this spell have been collected and you have memorized the incantation.
+	*then
+		flag banishment
+		->rotate
+
+@torch
+	*say
+		The torch is lit and with plenty of fuel.
+	*then
+		flag torch
+		->rotate
+
+@tesla coil
+	*say
+		The tesla coil is resonant and singing.
+	*then
+		flag coil
+		->rotate
+
+@rotate
+	*say
+	*then
+		if equipC {
+			flag start
+			unflag equipB
+			unflag equipA
+		}
+
+		if equipB {
+			flag equipC
+			unflag equipB
+			unflag equipA
+		}
+
+		if equipB {
+			flag equipB
+			unflag equipA
+			unflag equipC
+		}
+
+		->setup *recap
+@invalid
+	*say
+		You have either selected an item that is not available or selected an item twice.  Please try again.
+	*then
+		->equipment *reprompt
+
+@global append
+    *then
+        // listen everywhere for a few helpful phrases
+        hear start over, restart {
+            // Tell the framework to restart from the beginning
+            >> RESTART
+        }
+        hear repeat {
+            // Tell the framework to repeat everything the player just heard. You can use >> REPROMPT which only plays the reprompt content
+            >> REPEAT
+        }
+        hear help {e1}, help with {e1} {
+            -> help {e1}
+        }
+		hear help {e2}, help with {e2} {
+            -> help {e2}
+        }
+		hear help {e3}, help with {e3} {
+            -> help {e3}
+        }
+        hear go back {
+            >> back
+        }
+
+// SPECIAL SCENE: @resume is a special scene that will play when the player comes back to the game after leaving
+@resume
+	*say
+		Welcome back to your hiking story. Would you like to pick up where you last left off?
+	*then
+		hear yes {
+            // Tell the framework to pick up where they last left off
+			>> RESUME
+		}
+		hear no {
+			>> RESTART
+		}
+
+// SPECIAL SCENE: @pause is a special scene that plays before the skill pauses
+@pause
+	*say
+		Thanks for playing. 
+	*then
+		>> PAUSE
+
+@end
+	*say
+		Thanks for playing. Would you like to start over or take a break?
+	*then
+		hear take a break {
+			>> END
+		}
+
+@help EMF detector
+    *say
+		The EMF detector may alert you if an entity is present by sampling changes in the electromagnetic fields present in the environment.  It is especially reactive to entities that travel via electromagnetic fields ot those that are violent and angry.
+	*then
+		>> BACK
+
+@help spirit box
+		*say
+			The spirit box may pick up errant or directed voice or other sounds from entities. It scans radio frequencies for such sounds and is commonly useful for identifying and conversing with entities who are lost and those that are malevolent.
+		*then
+			>> BACK
+@help infrared detector
+		*say
+			The infrared detector scans the 'red' spectrum of light that is invisible to the human eye.  This instrument will identify fluctuations in heat and is well suited for identifying spirits can physically manifest and those that are covetous.
+		*then
+		>> BACK
+@help binding ritual
+		*say
+			This spell is used to hold an entity in place once it has been found.  Great for capturing photos or saving oneself from an untimely demise.
+		*then
+			>> BACK
+
+@help banishment ritual
+		*say
+			This spell dispels an entity from your location which may buy you some time if you need to escape or need to collect more evidence.
+		*then
+			>> BACK
+@help torch
+		*say
+			The torch is great to have if your flashlight has been drained of power and can ward off certain entity attacks.  It can also be used to expose entities of the cold and those that are lurking about.
+		*then
+			>> BACK
+@help tesla coil
+		*say
+			The Tesla coil is an resonant transformer used to generate lighting and musical tones.  This device can be used to lure out entities who are devious and can also be used to attack entities who travel by air.
+		*then
+			>> BACK

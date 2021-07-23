@@ -1,0 +1,732 @@
+@house
+    *say
+        Here we are.  This is a typical, two-bedroom ranch-style home nestled in the heart of surburbia.  You need to get in there, determine the type of entity we are dealing with, and collect evidence so that the sweepers know what they are dealing with when they arrive to do their thing. Figure out its type, age, and temperment and get a picture of it and you'll be done in no time.  Now, let us enter.
+    *then
+    set counter as 0
+        ->foyer
+
+@foyer
+    *say
+        This is the foyer. It is littered with the trappings of family life; kid shoes, umbrellas in a large tin, and a small desk with bills, keys, and a few photos strewn upon it. The living room is ahead and the kitchen is to the left.
+    *recap
+        The foyer. Kitchen left, living room ahead.
+    *then
+        set location as 3
+        hear go left, left, kitchen, go to kitchen, to the kitchen, to the left {
+            ->kitchen
+        }
+
+        hear go forward, go ahead, forward, ahead, go to living room, living room, to the living room, into the living room, let's go to the living room {
+            ->living room
+        }
+
+@living room
+*say
+    The living room is a bit array, as if the family left in a bit of a hurry.  Unfolded clothes sit upon the couch and a half-eaten hamburger was left on the coffee table.  There is an obligatory television in this room and a fireplace that has seen little use.  There is a sliding glass door to the patio ahead and a bathroom to the right.  The stairs to the second floor are next to the bathroom.  You can go backwards to the foyer.
+*recap
+    The living room. The foyer behind, patio ahead, bathroom to the right.  You can also take the stairs.
+*then
+    bookmark 
+    set location as 8
+    hear go ahead, go forward, ahead, forward, got to patio, to patio, go patio, to the patio {
+        -> patio
+    }
+
+    hear go right, right, to the right, to bathroom, go to bathroom, to the bathroom {
+        -> first story bathroom
+    }
+
+    hear go backwards, go to foyer, to foyer, foyer, backwards to foyer {
+        -> foyer
+    }
+
+    hear turn off television, turn television off, turn off TV, turn TV off, turn on television, turn the television on, turn on the TV, turn the TV on, turn on TV {
+        -> TV on
+    }
+
+@ TV on
+    *say
+        You press the button and the TV crackles to life.  There is nothing on the channel, just fizzing snow and the low hum of white noise.
+    *then
+     if type is 'apparition' || type is 'spirit' || type is 'accursed' {
+            if location is ghostLoc {
+                ->  TV here
+            }
+            if location < 20 && ghostLoc < 20 {
+                -> TV close
+            }
+        -> TV off
+     }
+     -> TV off
+
+
+@kitchen
+*say
+*then
+    set location as 2
+
+@dining room
+*say
+*then
+    set location as 1
+
+@stairs
+*say
+*then
+
+@first story bathroom
+*say
+*then
+    set location as 9
+
+@master bedroom
+*say
+*then
+    set location 22
+
+@master bathroom
+*say
+*then
+    set location 21
+
+@bedroom
+*say
+*then
+    set location as 28
+
+@second story landing
+*say
+*then
+    set location as 23
+@patio
+*say
+*then
+    set location as 13
+
+@balcony
+*say
+*then
+    set location as 33
+
+@global append
+    *then
+        hear use EMF Detector, activate EMF detector, try EMF detector {
+            bookmark
+            -> check EMF
+        }
+        hear use spirit box, activate spirit box, try spirit box {
+            bookmark
+            -> check box
+        }
+        hear use binding ritual, use ritual of binding, cast binding ritual, perform binding ritual, cast ritual of binding, perform ritual of binding, bind {
+            bookmark
+            -> check bind
+        }
+
+        hear use banishment ritual, use ritual of banishment, cast banishment ritual, perform banishment ritual, cast ritual of banishment, perform ritual of banishment, banish, banishment, banish this entity, banish the entity {
+            bookmark
+            -> check banish
+        }
+
+        hear use torch, swing torch, light torch {
+            bookmark
+            -> check torch
+        }
+        // listen everywhere for a few helpful phrases
+        hear start over, restart {
+            // Tell the framework to restart from the beginning
+            >> RESTART
+        }
+        hear repeat {      
+            >> REPEAT
+		}
+
+        hear check diary, check journal, check notes, read diary, read journal, read notes, consult journal, consult diary, consult notes, diary, journal, notes {
+            <-> journal
+            >> back
+        }
+
+        if health is 0 {
+            flag dead
+        }
+
+        if speak {
+            <-> speak
+            >> back
+        }
+
+        if cry {
+            <-> crying
+            >> back
+        }
+
+        if laugh {
+            <-> laugh
+            >> back
+        }                                            
+
+        if growl {
+            <-> growl
+            >> back
+        }
+
+@growl
+    *then
+        roll 1d6
+        if rollResult is less than 2 {
+            if location is ghostLoc {
+            -> growling close
+            }
+            if location is less than ghostLoc {
+                -> growling right
+            }
+
+            if location is greater than ghostLoc {
+                -> growling left
+
+            }
+        }
+        >> RETURN
+
+@crying
+    *then
+        roll 1d6
+        if rollResult is less than 4 {
+            if location is ghostLoc {
+            -> crying close
+            }
+            if location is less than ghostLoc {
+                -> crying right
+            }
+
+            if location is greater than ghostLoc {
+                -> crying left
+
+            }
+        }
+        >> RETURN
+
+@speak
+    *then
+        roll 1d6
+        if rollResult is less than 3 {
+            if location is ghostLoc {
+            -> speaking close
+            }
+            if location is less than ghostLoc {
+                -> speaking right
+            }
+
+            if location is greater than ghostLoc {
+                -> speaking left
+            }
+            
+        }
+        >> RETURN
+
+@laugh
+    *then
+        roll 1d6
+        if rollResult is less than 2 {
+            if location is ghostLoc {
+            -> laughing close
+            }
+            if location is less than ghostLoc {
+                -> laughing right
+            }
+
+            if location is greater than ghostLoc {
+                -> laughing left
+
+            }
+        }
+        >> RETURN
+
+@growling close
+    *say
+           <prosody volume="x-loud"> <audio src="soundbank://soundlibrary/monsters/ghosts_demons/ghosts_demons_04"/> </prosody>
+    *then
+            >> RETURN
+
+@growling left
+    *say
+           <prosody volume="x-soft"> <audio src="soundbank://soundlibrary/monsters/ghosts_demons/ghosts_demons_04"/> </prosody>
+    *then
+            >> RETURN
+
+@growling right
+    *say
+           <prosody volume="soft"> <audio src="soundbank://soundlibrary/monsters/ghosts_demons/ghosts_demons_04"/> </prosody>
+    *then
+            >> RETURN
+
+
+@laughing close
+    *say
+           <prosody volume="x-loud"> <audio src="soundbank://soundlibrary/human/amzn_sfx_laughter_giggle_02"/> </prosody>
+    *then
+            >> RETURN
+
+@laughing right
+    *say
+           <prosody volume="x-soft"> <audio src="soundbank://soundlibrary/human/amzn_sfx_laughter_giggle_02"/> </prosody>
+    *then
+            >> RETURN
+
+@laughing left
+    *say
+           <prosody volume="soft"> <audio src="soundbank://soundlibrary/human/amzn_sfx_laughter_giggle_02"/> </prosody>
+    *then
+            >> RETURN
+
+@crying close
+    *say
+           <prosody volume="x-loud">
+            <audio src="soundbank://soundlibrary/horror/horror_15"/>
+            </prosody>
+    *then
+            >> RETURN
+
+@crying right
+    *say
+           <prosody volume="x-soft">
+            <audio src="soundbank://soundlibrary/horror/horror_15"/>
+            </prosody>
+    *then
+            >> RETURN
+
+@crying left
+    *say
+           <prosody volume="soft">
+            <audio src="soundbank://soundlibrary/horror/horror_15"/>
+            </prosody>
+    *then
+            >> RETURN
+
+@speaking close
+    *say
+    <prosody volume="x-loud">
+        <audio src="soundbank://soundlibrary/horror/horror_12"/>
+    </prosody>
+    *then
+    >> RETURN
+
+@speaking left
+    *say
+    <prosody volume="soft">
+        <audio src="soundbank://soundlibrary/horror/horror_12"/>
+    </prosody>
+    *then
+    >> RETURN
+
+@speaking right
+    *say
+    <prosody volume="x-soft">
+        <audio src="soundbank://soundlibrary/horror/horror_12"/>
+    </prosody>
+    *then
+    >> RETURN
+
+@journal
+        *say
+            You consult your journal.
+            ||
+            You check your notes.
+        *recap
+            Furthermore
+            ||
+            Also
+            ||
+            Additionally
+            ||
+            Continuing on
+            ||
+            Interestingly
+            ||
+            Surprisingly
+        *then
+            if knowEMF {
+                <-> got EMF
+                -> journal *recap
+            }
+
+            if knowBox{
+                <-> got box
+                -> journal *recap
+            }
+
+            if knowBind{
+                <-> got bind
+                -> journal *recap
+            }
+
+            if knowBanish{
+                <-> got banish
+                -> journal *recap
+            }
+
+            if knowTorch {
+                <-> got torch
+                -> journal *recap
+            }
+
+            if knowIR {
+                <-> got IR
+                -> journal *recap
+            }
+
+            if knowTesla {
+                <-> got tesla
+                -> journal *recap
+            }
+
+            -> end journal
+
+@end journal
+    *say
+        And that's all she wrote.
+        ||
+        Not much there but keep at it.
+    *then
+        >> RETURN
+
+@got tesla
+    *say
+       The tesla coil sang a drew forth the entity.  This is usually only effective on spirits and the accursed.
+    *then
+        >> return
+
+
+@got IR
+    *say
+       Heat signatures were visible on the IR meter.  This could mean we are dealing with an apparition, demon, or spectre.
+    *then
+        >> return
+
+@got torch
+    *say
+        The entity reacted to the torch, meaning it is likely a demon, shadow, or accursed.
+     *then
+        >> return
+
+@got banish
+    *say
+        You were able to banish the entity.  Generally, only spectres and shadows can be banished. 
+    *then
+        >> return
+    
+@got EMF
+    *say
+        The strong electromagnetic frequencies were detected from the entity, common amongst apparitions and spectres.
+    *then
+        >> return
+
+@got box
+    *say
+        Voices were detected on the spirit box or through some other noise generator, indicative of an apparition, spirit, or accursed.
+    *then
+        >> return
+
+@got bind
+    *say
+        The entity is susceptible to binding, a sign of a shadow, spirit, or demon.
+    *then
+        >> RETURN
+
+@global prepend
+    *then
+        increase counter by 1
+        if dead {
+            -> dead
+        }
+
+@dead
+    *say
+        It seems your storied career and life have both come to an end. Pity, I was sort of getting used to you.  Farewell.
+    *then
+        >> END
+
+@check EMF
+    *then
+        if a is 'EMF detector' || b is 'EMF detector' || c is 'EMF detector' {
+            -> use EMF
+        }
+        ->item error
+
+@check box
+    *then
+        if a is 'spirit box' || b is 'spirit box' || c is 'spirit box' {
+            -> use box
+        }
+        ->item error
+
+@check bind
+    *then
+        if a is 'binding ritual' || b is 'binding ritual' || c is 'binding ritual' {
+            -> use bind
+        }
+        ->item error
+
+@check banish
+    *then
+        if a is 'banishment ritual' || b is 'banishment ritual' || c is 'banishment ritual' {
+            -> use banish
+        }
+        ->item error
+
+@check torch
+    *then
+        if a is 'torch' || b is 'torch' || c is 'torch' {
+            -> use torch
+        }
+        ->item error
+
+@item error
+    *say
+        You did not select that item.
+    *then
+        -> bookmark *recap
+
+@use EMF
+    *say
+        You consult the EMF meter.
+    *then
+        if type is 'apparition' || type is 'spectre' {
+            if location is ghostLoc {
+                -> EMF here
+            }
+            if location < 20 && ghostLoc < 20 {
+                -> EMF close
+            }
+            if location > 20 && ghostLoc > 20 {
+                -> EMF close
+            }
+        -> EMF Not
+
+        }
+        -> EMF Not
+
+@ EMF here
+*say
+    It is right on top of us.
+    ||
+    It's right here.
+*then
+    flag knowEMF
+    -> bookmark *recap
+
+@EMF close
+*say
+    It is close.
+    ||
+    The meter indicates its close.
+*then
+    -> bookmark *recap
+
+@EMF Not
+*say
+    The meter is not picking up any readings.
+    ||
+    EMF detector is negative.
+*then
+    -> bookmark *recap
+
+@use box
+    *say
+        You listen in on the spirit box.
+    *then
+        if type is 'apparition' || type is 'spirit' || type is 'accursed' {
+            if location is ghostLoc {
+                -> box here
+            }
+            if location < 20 && ghostLoc < 20 {
+                -> box close
+            }
+            if location > 20 && ghostLoc > 20 {
+                -> box close
+            }
+        -> box not
+
+        }
+        -> box not
+
+@box here
+*say
+    The voice is dangerously close.
+    ||
+    It sounds like it is next to you.
+*then
+    flag knowBox
+    -> bookmark *recap
+
+@box close
+*say
+    The voice is faint but near.
+    ||
+    It sounds like the voice is fairly close.
+*then
+    -> bookmark *recap
+
+@box not
+*say
+    You hear nothing but static
+    ||
+    The scan does not produce any results.
+*then
+    -> bookmark *recap
+
+@use bind
+    *say
+        You perform the ritual of binding
+    *then
+        if type is 'spirit' || type is 'demon' || type is 'shadow' {
+            if location is ghostLoc {
+                -> bind here
+            }
+            if location < 20 && ghostLoc < 20 {
+                -> bind close
+            }
+            if location > 20 && ghostLoc > 20 {
+                -> bind close
+            }
+        -> bind not
+
+        }
+        -> bind not
+
+@bind here
+*say
+    The ritual is a success! You can see the {type} before you as it writhes in the metaphysical prison.  It won't hold forver.
+*then
+    flag knowBind
+    flag bound
+    set binding as 2
+    -> bookmark *recap
+
+@bind close
+*say
+    You hear the spell attempt to bind the entity somewhere near.
+    ||
+    The entity is too far away to bind.
+*then
+    -> bookmark *recap
+
+@bind not
+*say
+    Apparently, the entity cannot be bound.
+    ||
+    The entity is not affected by the spell.
+*then
+    -> bookmark *recap
+
+
+@use banish
+    *say
+        You perform the ritual of banishment.
+    *then
+        if type is 'spectre' || type is 'shadow' {
+            if location is ghostLoc {
+                -> banish here
+            }
+            if location < 20 && ghostLoc < 20 {
+                -> banish close
+            }
+            if location > 20 && ghostLoc > 20 {
+                -> banish close
+            }
+        -> banish not
+
+        }
+        -> banish not
+
+@banish here
+*say
+    The ritual is a success! You see the {type} dissipate in confusion before you.  It is gone for now but will return shortly.
+*then
+    flag knowBanish
+    flag banish
+    set banished as 2
+    -> bookmark *recap
+
+@banish close
+*say
+    You hear the entity struggle but ultimately avoid the banishment.
+    ||
+    From afar you hear the spell fail to banish the entity.
+*then
+    -> bookmark *recap
+
+@banish not
+*say
+    Apparently, the entity cannot be banished.
+    ||
+    The entity is not affected by the spell.
+*then
+    -> bookmark *recap
+
+@use torch
+    *say
+        You swing the lit torch.
+    *then
+        if type is 'demon' || type is 'shadow' || type is 'accursed'{
+            if location is ghostLoc {
+                -> torch here
+            }
+            if location < 20 && ghostLoc < 20 {
+                -> torch close
+            }
+            if location > 20 && ghostLoc > 20 {
+                -> torch close
+            }
+        -> torch not
+
+        }
+        -> torch not
+
+@torch here
+*say
+    The torch flame stuns the entity.
+    ||
+    The torch illuminates the entity.
+*then
+    flag knowTorch
+    -> bookmark *recap
+
+@torch close
+*say
+    The torch lights the area but the entity slips away.
+    ||
+    The light from the torch causes the entity to shift.
+*then
+    -> bookmark *recap
+
+@torch not
+*say
+    The torch does not seem to react to the entity.
+    ||
+    The entity is not affected by the torch.
+*then
+    -> bookmark *recap
+
+@TV here
+*say
+    You hear a sound through the static. The voice is dangerously close.
+    ||
+    It sounds like something is speaking through the television.  It is right here!
+*then
+    flag knowBox
+    -> TV off
+
+@TV close
+*say
+    A voice is faint but apparent from within the static.
+    ||
+    A voice manifests in the static and it sounds near.
+*then
+    -> TV off
+
+@TV off
+*say
+    The button seems to be broken as the TV turns off on its own.
+*then
+    -> bookmark *recap

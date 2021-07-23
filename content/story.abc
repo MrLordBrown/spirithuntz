@@ -1,0 +1,609 @@
+@start
+
+	*say
+		Welcome to the house. Please state your name for the record.
+
+	*then
+		set health as 3
+		slot playerName to 'AMAZON.US_FIRST_NAME'
+        hear {playerName}, my name is {playerName}, i am {playerName} {
+            -> instructions
+	    }
+@instructions
+	*say
+		{playerName}, I see.  I would welcome you but there is not much time and, well frankly, you are most likely not welcome.  This house is haunted and none other than the great Spirit Hunter {playerName} shall vanquish the accursed from the halls of this home.  Listen carefully, follow the clues, and use your equipment wisely and you may make it out alive. Shall we begin?
+	*then
+		flag equipA
+		hear who are you, what is your name, what are you doing here {
+			-> who me
+		}
+
+		hear yes, sure, why not, okay, alright, you got it, cool {
+			-> equipment
+		}
+
+		hear nope, no way, no, no mam, nada {
+			-> end
+		}
+
+@who me
+	*say
+		Who am I?  Why, I am an angel; I am a cricket; I am a dandelion wish from upon high; here to see that you succeed at your task despite your shortcomings and fragile knowlede of what truly lies beyond.  I am the headmaster and the conductor; I am the only way you will survive the night.  With that said . . .
+	*then
+		-> equipment
+
+@equipment
+	*say
+		You should equipped yourself with some of the latest in ghost hunting technology and mytsical spells.  You may carry three items.  You can choose from an EMF detector, spirit box, infrared detector, binding ritual, banishment ritual, torch, and a tesla coil.  I you would like more information on these items, simply ask for help. So then, what is your first equipment selection?
+	*reprompt
+		Let's try again.  Please select your first equipment.
+	*then
+		hear EMF detector {
+			set a as 'EMF detector'
+			->second equipment
+		}
+
+		hear spirit box {
+			set a as 'spirit box'
+			->second equipment
+		}
+		hear infrared detector {
+			set a as 'infrared detector'
+			->second equipment
+		}
+		hear binding ritual {
+			set a as 'binding ritual'
+			->second equipment
+		}
+		hear banishment ritual {
+			set a as 'banishment ritual'
+			->second equipment
+		}
+		hear torch {
+			set a as 'torch'
+			->second equipment
+		}
+		hear tesla coil {
+			set a as 'tesla coil'
+			->second equipment
+		}
+		
+@second equipment
+		*say
+			You selected the {a}, good.  Now, select your second piece of equipment.
+		*then
+		hear EMF detector {
+			set b as 'EMF detector'
+			->last equipment
+		}
+		hear spirit box {
+			set b as 'spirit box'
+			->last equipment
+		}
+		hear infrared detector {
+			set b as 'infrared detector'
+			->last equipment
+		}
+		hear binding ritual {
+			set b as 'binding ritual'
+			->last equipment
+		}
+		hear banishment ritual {
+			set b as 'banishment ritual'
+			->last equipment
+		}
+		hear torch {
+			set b as 'torch'
+			->last equipment
+		}
+		hear tesla coil {
+			set b as 'tesla coil'
+			->last equipment
+		}	
+
+@last equipment
+		*say
+			You chose the {b}, clever.  Now for your final piece of equipment.
+		*then	
+		hear EMF detector {
+			set c as 'EMF detector'
+			->setup
+		}
+		hear spirit box {
+			set c as 'spirit box'
+			->setup
+		}
+		hear infrared detector {
+			set c as 'infrared detector'
+			->setup
+		}
+		hear binding ritual {
+			set c as 'binding ritual'
+			->setup
+		}
+		hear banishment ritual {
+			set c as 'banishment ritual'
+			->setup
+		}
+		hear torch {
+			set c as 'torch'
+			->setup
+		}
+		hear tesla coil {
+			set c as 'tesla coil'
+			->setup
+		}
+@setup
+	*say
+		You have selected the {a}, {b}, and {c} for your equipment.  Do remember that you always have a flashlight and a digital camera on you, as well. We will now check your equipment before we proceed.  Your flashlight is on and functioning.  Your camera is operational. All equipment checks out.
+	*recap
+		So you have that.  Next . . .
+	*then
+		flag flashlight
+		flag camera
+		flag {a}
+		flag {b}
+		flag {c}
+		-> begin
+
+@begin
+	*say
+		Now we begin.
+	*then
+		roll 1d6
+			if rollResult is 1 {
+				set age as 'infant'
+				->type
+			}
+			if rollResult is 2 {
+				set age as 'toddler'
+				-> type
+			}
+			if rollResult is 3 {
+				set age as 'child'
+				-> type
+			}
+			if rollResult is 4 {
+				set age as 'teenager'
+				-> type
+			}
+
+			if rollResult is 5 {
+				set age as 'adult'
+				-> type
+			}
+
+			if rollResult is 6 {
+				set age as 'elderly'
+				-> type
+			}
+
+
+@type
+	*say
+		Hmmmmm.
+	*then
+		roll 1d6
+			if rollResult is 1 {
+			  set type as 'apparition'
+			  -> temp
+			}
+
+			if rollResult is 2 {
+				set type as 'demon'
+				-> temp
+			}
+
+			if rollResult is 3 {
+				set type as 'spirit'
+				-> temp
+			}
+
+			if rollResult is 4 {
+				set type as 'shadow'
+				-> temp
+			}
+
+			if rollResult is 5 {
+				set type as 'spectre'
+				-> temp
+			}
+
+			if rollResult is 6 {
+				set type as 'accursed'
+				-> temp
+			}
+
+@temp
+	*say
+		I see, I see.
+	*then
+		roll 1d6
+			if rollResult is 1 {
+				set temp as 'searching'
+				-> brief
+			}
+
+			if rollResult is 2 {
+				set temp as 'playful'
+				-> brief
+			}
+
+			if rollResult is 3 {
+				set temp as 'jealous'
+				-> brief
+			}
+
+			if rollResult is 4 {
+				set temp as 'mischevious'
+				-> brief
+			}
+
+			if rollResult is 5 {
+				set temp as 'angry'
+				-> brief
+			}
+
+			if rollResult is 6 {
+				set temp as 'evil'
+				-> brief
+			}
+
+@brief
+	*say
+		Alrighty, here is what we know about this location.
+	*then
+		if age is 'infant' || age is 'toddler' || age is 'child' || age is 'teenager' {
+			->young age
+		}
+		if age is 'adult' || age is 'elderly' {
+			->old age
+		}
+
+@young age
+	*say
+		There are reports of youthful chatter or laughing about the house.
+		||
+		Some have heard the voices of children in the night.
+		||
+		Folklore remembers that terrible things happened to some young people here and many believe they have not forgotten.
+	*then
+		-> describe temp
+
+@old age
+	*say
+		There are reports of adult voices echoing through the halls.
+		||
+		Some say you can hear the chattering of wives and husbands in the night.
+		||
+		Legend has it that the head mistress or master still claims ownership of the grounds.
+	*then
+		->describe temp
+
+@describe temp
+	*then
+		if temp is 'playful' || temp is 'mischevious' {
+			->temp fun
+		}
+
+		if temp is 'searching' {
+			-> temp look
+		}
+
+		if temp is 'angry' || temp is 'jealous' {
+			->temp bad
+		}
+
+		if temp is 'evil' {
+			-> temp evil
+		}
+
+@temp fun
+	*say
+		Entities here seem to enjoy interacting with the living, almost like its a game to them.
+		||
+		Reports indicate that the entity is drawn to games like tossing a ball around or moving pieces on a chess board.
+		||
+		Prior accounts indicate a lighthearted demeanor from the entity.
+	*then 
+	-> describe type
+
+@temp look
+	*say
+		Those who have encountered the entity describe it as lost or pacing, as if it is looking for something.
+		||
+		Prior investigations reveal this spirit repeats many of the same actions.
+		||
+		Reports indicate that the entity seems sad.
+	*then
+		->describe type
+
+@temp bad
+	*say
+		Reports indicate that this entity exhibits hatred towards the living.
+		||
+		Entities have been described as violent and have attacked others or damaged property.
+		||
+		Previous investigators provide warning that this entity is dangerous.
+	*then
+		-> describe type
+
+@temp evil
+	*say
+		All accounts indicate the entity as dark with otherworldly malevolence.
+		||
+		Reports indicate this being will use any means necessary to accomplish its goals.
+		||
+		One investigator writes that the entity is 'wicked', over and over, maybe a hundred times or more.
+	*then
+		-> describe type
+
+@describe type
+	*then
+			if type is 'apparition' || type is 'spirit' || type is 'accursed' {
+				-> type lived
+			}
+			if type is 'demon' || type is 'shadow' || type is 'spectre' {
+				-> type other
+			}
+
+@type lived
+	*say
+		Finally, the entity appears to remember or resemble something of its past life.
+		||
+		Lastly, the entity appears to be dressed in the attire from when it was alive.
+		||
+		The last report indicates that entities have human features.
+	*then
+		->set ghost
+
+@type other
+	*say
+		Finally, these entities appear to have no prior attachment to a past life.
+		||
+		Lastly, the entity may appear in monstrous or grosteque forms.
+		||
+		The last report warns that the entity is completely lacking in any form of humanity.
+	*then
+		->set ghost
+
+@set ghost
+	*then
+		if age is 'infant' {
+			flag cry
+			flag slow
+			flag small
+			-> set ghost type
+		}
+		
+		if age is 'toddler' {
+			flag cry
+			flag laugh
+			flag slow
+			flag small
+			-> set ghost type
+			}
+
+		if age is 'child' {
+			flag laugh
+			flag slow
+			flag small
+			-> set ghost type
+			}
+
+		if age is 'teenager' {
+			flag scream
+			flag fast
+			flag speak
+			flag indif
+			-> set ghost type
+			}
+		
+		if age is 'adult'{
+			flag scream
+			flag growl
+			flag carry
+			flag write
+			flag laugh
+			-> set ghost type
+			}
+
+		if age is 'elderly' {
+			flag cry
+			flag laugh
+			flag slow
+			flag repeat
+			flag madness
+			flag small
+			-> set ghost type
+		}
+
+@set ghost type
+	*then
+		if type is 'apparition' {
+			flag fly
+			flag lie
+			flag steal
+			flag attack
+			flag kill
+			flag stalk
+			flag chase
+			flag carry
+			flag write
+			flag speak
+			flag manifest
+			flag madness
+			-> set ghost temp
+		}
+
+		if type is 'spirit' {
+			flag walk
+			flag lie
+			flag help
+			flag stalk
+			flag carry
+			flag write
+			flag speak
+			flag repeat
+			-> set ghost temp
+		}
+
+		if type is 'demon' {
+			flag large
+			flag obsessed
+			flag manifest
+			flag possess
+			flag carry
+			flag careless
+			flag chase
+			flag attack
+			flag kill
+			flag fly
+			flag lie
+			-> set ghost temp
+		}
+
+		if type is 'spectre' {
+			flag phase
+			flag steal
+			flag indif
+			flag write
+			flag manifest
+			flag repeat
+			-> set ghost temp
+		}
+
+		if type is 'shadow' {
+			flag teleport
+			flag attack
+			flag stalk
+			flag fast
+			flag indif
+			-> set ghost temp
+		}
+
+		if type is 'accursed' {
+			flag walk
+			flag steal
+			flag attack
+			flag kill
+			flag chase
+			flag carry
+			flag write
+			flag speak
+			flag possess
+			flag madness
+			flag obsessed
+			-> set ghost temp
+		}
+
+@set ghost temp
+	*then
+		if temp is 'searching' {
+			flag speak
+			flag cry
+			flag help
+			flag careless
+			flag slow
+			-> place
+		}
+
+		if temp is 'playful' {
+			flag indif
+			flag laugh
+			flag stalk
+			flag careless
+			-> place
+			}
+
+		if temp is 'jealous' {
+			flag write
+			flag obsessed
+			flag stalk
+			flag chase
+			flag scream
+			-> place
+		}
+
+		if temp is 'mischevious' {
+			flag lie
+			flag steal
+			flag possess
+			-> place
+		}
+
+		if temp is 'angry' {
+			flag growl
+			flag attack
+			flag stalk
+			flag chase
+			flag madness
+			-> place
+		}
+
+		if temp is 'evil' {
+			flag lie
+			flag attack
+			flag kill
+			flag chase
+			flag manifest
+			-> place
+		}
+
+@place
+*then
+	if age is 'infant' or age is 'toddler' or age is 'child' {
+		roll 1d6
+			if rollResult is greater than 0 && rollResult is less than 4 {
+				set ghostLoc as 28
+				-> house
+			}
+			if rollResult is greater than 3 && rollResult is less than 7 {
+				set ghostLoc as 22
+				-> house
+			}
+	}
+	
+	roll 1d6
+			if rollResult is greater than 0 && rollResult is less than 4 {
+				set ghostLoc as 21
+				-> house
+			}
+			if rollResult is greater than 3 && rollResult is less than 7 {
+				set ghostLoc as 33
+				-> house
+			}
+@enter
+	*say
+		Time to enter the house.
+	*then
+		->house
+
+
+// SPECIAL SCENE: @resume is a special scene that will play when the player comes back to the game after leaving
+@resume
+	*say
+		Welcome back to the hunt. Would you like to pick up where you last left off?
+	*then
+		hear yes {
+            // Tell the framework to pick up where they last left off
+			>> RESUME
+		}                                                                                                                                                                                        
+		hear no {
+			>> RESTART
+		}
+
+// SPECIAL SCENE: @pause is a special scene that plays before the skill pauses
+@pause
+	*say
+		Thanks for playing. 
+	*then
+		>> PAUSE
+
+@end
+	*say
+		Thanks for playing. Would you like to start over or take a break?
+	*then
+		hear take a break {
+			>> END
+		}
