@@ -1,0 +1,28 @@
+{
+  "equipmentOne": [
+    "EMF detector",
+    "infrared detector",
+      "spirit box",
+      "binding ritual",
+      "banishment ritual",
+      "torch",
+      "tesla coil"
+  ],
+    "equipmentTwo": [
+	"EMF detector",
+	"infrared detector",
+      "spirit box",
+      "binding ritual",
+      "banishment ritual",
+      "torch",
+	"tesla coil"
+    ],
+    "equipmentThree": [
+	 "EMF detector",
+    "infrared detector",
+      "spirit box",
+      "binding ritual",
+      "banishment ritual",
+      "torch",
+      "tesla coil"]
+}

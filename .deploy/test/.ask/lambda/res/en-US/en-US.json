@@ -1,0 +1,291 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "intents": [
+                {
+                    "name": "flexaIntent",
+                    "samples": [
+                        "use emf detector",
+                        "activate emf detector",
+                        "try emf detector"
+                    ]
+                },
+                {
+                    "name": "flexbIntent",
+                    "samples": [
+                        "use spirit box",
+                        "activate spirit box",
+                        "try spirit box"
+                    ]
+                },
+                {
+                    "name": "flexcIntent",
+                    "samples": [
+                        "use binding ritual",
+                        "use ritual of binding",
+                        "cast binding ritual",
+                        "perform binding ritual",
+                        "cast ritual of binding",
+                        "perform ritual of binding",
+                        "bind"
+                    ]
+                },
+                {
+                    "name": "flexdIntent",
+                    "samples": [
+                        "use banishment ritual",
+                        "use ritual of banishment",
+                        "cast banishment ritual",
+                        "perform banishment ritual",
+                        "cast ritual of banishment",
+                        "perform ritual of banishment",
+                        "banish",
+                        "banishment",
+                        "banish this entity",
+                        "banish the entity"
+                    ]
+                },
+                {
+                    "name": "flexeIntent",
+                    "samples": [
+                        "use torch",
+                        "swing torch",
+                        "light torch"
+                    ]
+                },
+                {
+                    "name": "flexfIntent",
+                    "samples": [
+                        "check diary",
+                        "check journal",
+                        "check notes",
+                        "read diary",
+                        "read journal",
+                        "read notes",
+                        "consult journal",
+                        "consult diary",
+                        "consult notes",
+                        "diary",
+                        "journal",
+                        "notes"
+                    ]
+                },
+                {
+                    "name": "flexgIntent",
+                    "samples": [
+                        "go left",
+                        "left",
+                        "kitchen",
+                        "go to kitchen",
+                        "to the kitchen",
+                        "to the left"
+                    ]
+                },
+                {
+                    "name": "flexhIntent",
+                    "samples": [
+                        "ahead",
+                        "go to living room",
+                        "living room",
+                        "to the living room",
+                        "into the living room",
+                        "let's go to the living room",
+                        "got to patio",
+                        "to patio",
+                        "go patio",
+                        "to the patio"
+                    ]
+                },
+                {
+                    "name": "flexiIntent",
+                    "samples": [
+                        "go right",
+                        "to the right",
+                        "to bathroom",
+                        "go to bathroom",
+                        "to the bathroom"
+                    ]
+                },
+                {
+                    "name": "flexjIntent",
+                    "samples": [
+                        "go backwards",
+                        "go to foyer",
+                        "to foyer",
+                        "foyer",
+                        "backwards to foyer"
+                    ]
+                },
+                {
+                    "name": "flexkIntent",
+                    "samples": [
+                        "turn off television",
+                        "turn television off",
+                        "turn off tv",
+                        "turn tv off",
+                        "turn on television",
+                        "turn the television on",
+                        "turn on the tv",
+                        "turn the tv on",
+                        "turn on tv"
+                    ]
+                },
+                {
+                    "name": "CatchAllSlotIntent",
+                    "samples": [
+                        "{playerName}",
+                        "my name is {playerName}",
+                        "i am {playerName}"
+                    ],
+                    "slots": [
+                        {
+                            "name": "playerName",
+                            "type": "AMAZON.US_FIRST_NAME"
+                        }
+                    ]
+                },
+                {
+                    "name": "flexlIntent",
+                    "samples": [
+                        "who are you",
+                        "what is your name",
+                        "what are you doing here"
+                    ]
+                },
+                {
+                    "name": "flexmIntent",
+                    "samples": [
+                        "why not",
+                        "you got it",
+                        "cool"
+                    ]
+                },
+                {
+                    "name": "flexnIntent",
+                    "samples": [
+                        "no mam",
+                        "nada"
+                    ]
+                },
+                {
+                    "name": "flexoIntent",
+                    "samples": [
+                        "emf detector"
+                    ]
+                },
+                {
+                    "name": "flexpIntent",
+                    "samples": [
+                        "spirit box"
+                    ]
+                },
+                {
+                    "name": "flexqIntent",
+                    "samples": [
+                        "infrared detector"
+                    ]
+                },
+                {
+                    "name": "flexrIntent",
+                    "samples": [
+                        "binding ritual"
+                    ]
+                },
+                {
+                    "name": "flexsIntent",
+                    "samples": [
+                        "banishment ritual"
+                    ]
+                },
+                {
+                    "name": "flextIntent",
+                    "samples": [
+                        "torch"
+                    ]
+                },
+                {
+                    "name": "flexuIntent",
+                    "samples": [
+                        "tesla coil"
+                    ]
+                },
+                {
+                    "name": "flexvIntent",
+                    "samples": [
+                        "take a break"
+                    ]
+                },
+                {
+                    "name": "AMAZON.CancelIntent"
+                },
+                {
+                    "name": "AMAZON.HelpIntent"
+                },
+                {
+                    "name": "AMAZON.LoopOffIntent"
+                },
+                {
+                    "name": "AMAZON.LoopOnIntent"
+                },
+                {
+                    "name": "AMAZON.NextIntent"
+                },
+                {
+                    "name": "AMAZON.NoIntent"
+                },
+                {
+                    "name": "AMAZON.PauseIntent"
+                },
+                {
+                    "name": "AMAZON.PreviousIntent"
+                },
+                {
+                    "name": "AMAZON.RepeatIntent"
+                },
+                {
+                    "name": "AMAZON.ResumeIntent"
+                },
+                {
+                    "name": "AMAZON.ShuffleOffIntent"
+                },
+                {
+                    "name": "AMAZON.ShuffleOnIntent"
+                },
+                {
+                    "name": "AMAZON.StartOverIntent"
+                },
+                {
+                    "name": "AMAZON.StopIntent"
+                },
+                {
+                    "name": "AMAZON.YesIntent"
+                },
+                {
+                    "name": "AMAZON.ScrollUpIntent"
+                },
+                {
+                    "name": "AMAZON.ScrollLeftIntent"
+                },
+                {
+                    "name": "AMAZON.ScrollDownIntent"
+                },
+                {
+                    "name": "AMAZON.ScrollRightIntent"
+                },
+                {
+                    "name": "AMAZON.PageUpIntent"
+                },
+                {
+                    "name": "AMAZON.PageDownIntent"
+                },
+                {
+                    "name": "AMAZON.MoreIntent"
+                },
+                {
+                    "name": "AMAZON.FallbackIntent"
+                }
+            ],
+            "invocationName": "test"
+        }
+    }
+}

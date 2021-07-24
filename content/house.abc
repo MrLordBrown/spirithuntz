@@ -244,86 +244,86 @@
 
 @growling close
     *say
-           <prosody volume="x-loud"> <audio src="soundbank://soundlibrary/monsters/ghosts_demons/ghosts_demons_04"/> </prosody>
+           <audio src="soundbank://soundlibrary/monsters/ghosts_demons/ghosts_demons_04"/>
     *then
             >> RETURN
 
 @growling left
     *say
-           <prosody volume="x-soft"> <audio src="soundbank://soundlibrary/monsters/ghosts_demons/ghosts_demons_04"/> </prosody>
+            <audio src="soundbank://soundlibrary/monsters/ghosts_demons/ghosts_demons_04"/> 
     *then
             >> RETURN
 
 @growling right
     *say
-           <prosody volume="soft"> <audio src="soundbank://soundlibrary/monsters/ghosts_demons/ghosts_demons_04"/> </prosody>
+            <audio src="soundbank://soundlibrary/monsters/ghosts_demons/ghosts_demons_04"/> 
     *then
             >> RETURN
 
 
 @laughing close
     *say
-           <prosody volume="x-loud"> <audio src="soundbank://soundlibrary/human/amzn_sfx_laughter_giggle_02"/> </prosody>
+            <audio src="soundbank://soundlibrary/human/amzn_sfx_laughter_giggle_02"/> 
     *then
             >> RETURN
 
 @laughing right
     *say
-           <prosody volume="x-soft"> <audio src="soundbank://soundlibrary/human/amzn_sfx_laughter_giggle_02"/> </prosody>
+            <audio src="soundbank://soundlibrary/human/amzn_sfx_laughter_giggle_02"/> 
     *then
             >> RETURN
 
 @laughing left
     *say
-           <prosody volume="soft"> <audio src="soundbank://soundlibrary/human/amzn_sfx_laughter_giggle_02"/> </prosody>
+            <audio src="soundbank://soundlibrary/human/amzn_sfx_laughter_giggle_02"/> 
     *then
             >> RETURN
 
 @crying close
     *say
-           <prosody volume="x-loud">
+           
             <audio src="soundbank://soundlibrary/horror/horror_15"/>
-            </prosody>
+            
     *then
             >> RETURN
 
 @crying right
     *say
-           <prosody volume="x-soft">
+           
             <audio src="soundbank://soundlibrary/horror/horror_15"/>
-            </prosody>
+            
     *then
             >> RETURN
 
 @crying left
     *say
-           <prosody volume="soft">
+           
             <audio src="soundbank://soundlibrary/horror/horror_15"/>
-            </prosody>
+            
     *then
             >> RETURN
 
 @speaking close
     *say
-    <prosody volume="x-loud">
+    
         <audio src="soundbank://soundlibrary/horror/horror_12"/>
-    </prosody>
+    
     *then
     >> RETURN
 
 @speaking left
     *say
-    <prosody volume="soft">
+    
         <audio src="soundbank://soundlibrary/horror/horror_12"/>
-    </prosody>
+    
     *then
     >> RETURN
 
 @speaking right
     *say
-    <prosody volume="x-soft">
+    
         <audio src="soundbank://soundlibrary/horror/horror_12"/>
-    </prosody>
+    
     *then
     >> RETURN
 
