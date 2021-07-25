@@ -1,9 +1,17 @@
 @house
     *say
-        Here we are.  This is a typical, two-bedroom ranch-style home nestled in the heart of surburbia.  You need to get in there, determine the type of entity we are dealing with, and collect evidence so that the sweepers know what they are dealing with when they arrive to do their thing. Figure out its type, age, and temperment and get a picture of it and you'll be done in no time.  Now, let us enter.
+        Here we are.  This is a typical, two-bedroom ranch-style home nestled in the heart of surburbia.  You need to get in there, determine the type of entity we are dealing with, and collect evidence so that the sweepers know what they are dealing with when they arrive to do their thing. Figure out its type, age, and temperment and get a picture of it and you'll be done in no time.Are you ready for this?
+    *recap
+        Are you ready to continue?
     *then
-    set counter as 0
+        hear yes, sure, yeah, alright {
+
         ->foyer
+        }
+
+        hear no, nope, nada, I'm out, noway {
+            >> END
+        }
 
 @foyer
     *say
@@ -26,7 +34,6 @@
 *recap
     The living room. The foyer behind, patio ahead, bathroom to the right.  You can also take the stairs.
 *then
-    bookmark 
     set location as 8
     hear go ahead, go forward, ahead, forward, got to patio, to patio, go patio, to the patio {
         -> patio
@@ -41,7 +48,8 @@
     }
 
     hear turn off television, turn television off, turn off TV, turn TV off, turn on television, turn the television on, turn on the TV, turn the TV on, turn on TV {
-        -> TV on
+        <-> TV on
+        -> living room *recap
     }
 
 @ TV on
@@ -376,8 +384,7 @@
             }
 
             if knowTesla {
-                <-> got tesla
-                -> journal *recap
+                -> got tesla
             }
 
             -> end journal
@@ -394,7 +401,7 @@
     *say
        The tesla coil sang a drew forth the entity.  This is usually only effective on spirits and the accursed.
     *then
-        >> return
+        -> end journal
 
 
 @got IR
@@ -729,4 +736,4 @@
 *say
     The button seems to be broken as the TV turns off on its own.
 *then
-    -> bookmark *recap
+    >> return

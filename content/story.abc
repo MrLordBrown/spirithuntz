@@ -135,7 +135,7 @@
 		}
 @setup
 	*say
-		You have selected the {a}, {b}, and {c} for your equipment.  Do remember that you always have a flashlight and a digital camera on you, as well. We will now check your equipment before we proceed.  Your flashlight is on and functioning.  Your camera is operational. All equipment checks out.
+		[equip {a} {b} {c}]  Remember that you always have a flashlight and a digital camera on you, as well. We will now check your equipment before we proceed.  Your flashlight is on and functioning.  Your camera is operational. All equipment checks out.
 	*recap
 		So you have that.  Next . . .
 	*then
@@ -577,6 +577,7 @@
 	*say
 		Time to enter the house.
 	*then
+	set counter as 0
 		->house
 
 

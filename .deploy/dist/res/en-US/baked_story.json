@@ -8175,7 +8175,7 @@
         {
             "contents": [
                 {
-                    "narration": "<prosody volume=\"x-loud\"> <audio src=\"soundbank://soundlibrary/monsters/ghosts_demons/ghosts_demons_04\"/> </prosody>",
+                    "narration": "<audio src=\"soundbank://soundlibrary/monsters/ghosts_demons/ghosts_demons_04\"/>",
                     "sceneDirections": [
                         {
                             "directionType": "increase",
@@ -8581,7 +8581,7 @@
         {
             "contents": [
                 {
-                    "narration": "<prosody volume=\"x-soft\"> <audio src=\"soundbank://soundlibrary/monsters/ghosts_demons/ghosts_demons_04\"/> </prosody>",
+                    "narration": "<audio src=\"soundbank://soundlibrary/monsters/ghosts_demons/ghosts_demons_04\"/>",
                     "sceneDirections": [
                         {
                             "directionType": "increase",
@@ -8980,14 +8980,14 @@
             ],
             "id": "growling left",
             "customProperties": {
-                "sourceLocation": 6634,
+                "sourceLocation": 6597,
                 "sourceID": "house.abc"
             }
         },
         {
             "contents": [
                 {
-                    "narration": "<prosody volume=\"soft\"> <audio src=\"soundbank://soundlibrary/monsters/ghosts_demons/ghosts_demons_04\"/> </prosody>",
+                    "narration": "<audio src=\"soundbank://soundlibrary/monsters/ghosts_demons/ghosts_demons_04\"/>",
                     "sceneDirections": [
                         {
                             "directionType": "increase",
@@ -9386,14 +9386,14 @@
             ],
             "id": "growling right",
             "customProperties": {
-                "sourceLocation": 6819,
+                "sourceLocation": 6747,
                 "sourceID": "house.abc"
             }
         },
         {
             "contents": [
                 {
-                    "narration": "<prosody volume=\"x-loud\"> <audio src=\"soundbank://soundlibrary/human/amzn_sfx_laughter_giggle_02\"/> </prosody>",
+                    "narration": "<audio src=\"soundbank://soundlibrary/human/amzn_sfx_laughter_giggle_02\"/>",
                     "sceneDirections": [
                         {
                             "directionType": "increase",
@@ -9792,14 +9792,14 @@
             ],
             "id": "laughing close",
             "customProperties": {
-                "sourceLocation": 7004,
+                "sourceLocation": 6899,
                 "sourceID": "house.abc"
             }
         },
         {
             "contents": [
                 {
-                    "narration": "<prosody volume=\"x-soft\"> <audio src=\"soundbank://soundlibrary/human/amzn_sfx_laughter_giggle_02\"/> </prosody>",
+                    "narration": "<audio src=\"soundbank://soundlibrary/human/amzn_sfx_laughter_giggle_02\"/>",
                     "sceneDirections": [
                         {
                             "directionType": "increase",
@@ -10198,14 +10198,14 @@
             ],
             "id": "laughing right",
             "customProperties": {
-                "sourceLocation": 7184,
+                "sourceLocation": 7044,
                 "sourceID": "house.abc"
             }
         },
         {
             "contents": [
                 {
-                    "narration": "<prosody volume=\"soft\"> <audio src=\"soundbank://soundlibrary/human/amzn_sfx_laughter_giggle_02\"/> </prosody>",
+                    "narration": "<audio src=\"soundbank://soundlibrary/human/amzn_sfx_laughter_giggle_02\"/>",
                     "sceneDirections": [
                         {
                             "directionType": "increase",
@@ -10604,14 +10604,14 @@
             ],
             "id": "laughing left",
             "customProperties": {
-                "sourceLocation": 7364,
+                "sourceLocation": 7189,
                 "sourceID": "house.abc"
             }
         },
         {
             "contents": [
                 {
-                    "narration": "<prosody volume=\"x-loud\">\n            <audio src=\"soundbank://soundlibrary/horror/horror_15\"/>\n            </prosody>",
+                    "narration": "<audio src=\"soundbank://soundlibrary/horror/horror_15\"/>",
                     "sceneDirections": [
                         {
                             "directionType": "increase",
@@ -11010,14 +11010,14 @@
             ],
             "id": "crying close",
             "customProperties": {
-                "sourceLocation": 7541,
+                "sourceLocation": 7333,
                 "sourceID": "house.abc"
             }
         },
         {
             "contents": [
                 {
-                    "narration": "<prosody volume=\"x-soft\">\n            <audio src=\"soundbank://soundlibrary/horror/horror_15\"/>\n            </prosody>",
+                    "narration": "<audio src=\"soundbank://soundlibrary/horror/horror_15\"/>",
                     "sceneDirections": [
                         {
                             "directionType": "increase",
@@ -11416,14 +11416,14 @@
             ],
             "id": "crying right",
             "customProperties": {
-                "sourceLocation": 7726,
+                "sourceLocation": 7483,
                 "sourceID": "house.abc"
             }
         },
         {
             "contents": [
                 {
-                    "narration": "<prosody volume=\"soft\">\n            <audio src=\"soundbank://soundlibrary/horror/horror_15\"/>\n            </prosody>",
+                    "narration": "<audio src=\"soundbank://soundlibrary/horror/horror_15\"/>",
                     "sceneDirections": [
                         {
                             "directionType": "increase",
@@ -11822,14 +11822,14 @@
             ],
             "id": "crying left",
             "customProperties": {
-                "sourceLocation": 7911,
+                "sourceLocation": 7633,
                 "sourceID": "house.abc"
             }
         },
         {
             "contents": [
                 {
-                    "narration": "<prosody volume=\"x-loud\">\n        <audio src=\"soundbank://soundlibrary/horror/horror_12\"/>\n    </prosody>",
+                    "narration": "<audio src=\"soundbank://soundlibrary/horror/horror_12\"/>",
                     "sceneDirections": [
                         {
                             "directionType": "increase",
@@ -12228,14 +12228,14 @@
             ],
             "id": "speaking close",
             "customProperties": {
-                "sourceLocation": 8093,
+                "sourceLocation": 7782,
                 "sourceID": "house.abc"
             }
         },
         {
             "contents": [
                 {
-                    "narration": "<prosody volume=\"soft\">\n        <audio src=\"soundbank://soundlibrary/horror/horror_12\"/>\n    </prosody>",
+                    "narration": "<audio src=\"soundbank://soundlibrary/horror/horror_12\"/>",
                     "sceneDirections": [
                         {
                             "directionType": "increase",
@@ -12634,14 +12634,14 @@
             ],
             "id": "speaking left",
             "customProperties": {
-                "sourceLocation": 8253,
+                "sourceLocation": 7907,
                 "sourceID": "house.abc"
             }
         },
         {
             "contents": [
                 {
-                    "narration": "<prosody volume=\"x-soft\">\n        <audio src=\"soundbank://soundlibrary/horror/horror_12\"/>\n    </prosody>",
+                    "narration": "<audio src=\"soundbank://soundlibrary/horror/horror_12\"/>",
                     "sceneDirections": [
                         {
                             "directionType": "increase",
@@ -13040,7 +13040,7 @@
             ],
             "id": "speaking right",
             "customProperties": {
-                "sourceLocation": 8410,
+                "sourceLocation": 8031,
                 "sourceID": "house.abc"
             }
         },
@@ -13609,7 +13609,7 @@
             ],
             "id": "journal",
             "customProperties": {
-                "sourceLocation": 8570,
+                "sourceLocation": 8156,
                 "sourceID": "house.abc"
             }
         },
@@ -14015,7 +14015,7 @@
             ],
             "id": "end journal",
             "customProperties": {
-                "sourceLocation": 9679,
+                "sourceLocation": 9265,
                 "sourceID": "house.abc"
             }
         },
@@ -14421,7 +14421,7 @@
             ],
             "id": "got tesla",
             "customProperties": {
-                "sourceLocation": 9814,
+                "sourceLocation": 9400,
                 "sourceID": "house.abc"
             }
         },
@@ -14827,7 +14827,7 @@
             ],
             "id": "got IR",
             "customProperties": {
-                "sourceLocation": 9977,
+                "sourceLocation": 9563,
                 "sourceID": "house.abc"
             }
         },
@@ -15233,7 +15233,7 @@
             ],
             "id": "got torch",
             "customProperties": {
-                "sourceLocation": 10147,
+                "sourceLocation": 9733,
                 "sourceID": "house.abc"
             }
         },
@@ -15639,7 +15639,7 @@
             ],
             "id": "got banish",
             "customProperties": {
-                "sourceLocation": 10289,
+                "sourceLocation": 9875,
                 "sourceID": "house.abc"
             }
         },
@@ -16045,7 +16045,7 @@
             ],
             "id": "got EMF",
             "customProperties": {
-                "sourceLocation": 10443,
+                "sourceLocation": 10029,
                 "sourceID": "house.abc"
             }
         },
@@ -16451,7 +16451,7 @@
             ],
             "id": "got box",
             "customProperties": {
-                "sourceLocation": 10609,
+                "sourceLocation": 10195,
                 "sourceID": "house.abc"
             }
         },
@@ -16857,7 +16857,7 @@
             ],
             "id": "got bind",
             "customProperties": {
-                "sourceLocation": 10792,
+                "sourceLocation": 10378,
                 "sourceID": "house.abc"
             }
         },
@@ -16896,7 +16896,7 @@
             ],
             "id": "global prepend",
             "customProperties": {
-                "sourceLocation": 10924,
+                "sourceLocation": 10510,
                 "sourceID": "house.abc"
             }
         },
@@ -17302,7 +17302,7 @@
             ],
             "id": "dead",
             "customProperties": {
-                "sourceLocation": 11029,
+                "sourceLocation": 10615,
                 "sourceID": "house.abc"
             }
         },
@@ -17726,7 +17726,7 @@
             ],
             "id": "check EMF",
             "customProperties": {
-                "sourceLocation": 11194,
+                "sourceLocation": 10780,
                 "sourceID": "house.abc"
             }
         },
@@ -18150,7 +18150,7 @@
             ],
             "id": "check box",
             "customProperties": {
-                "sourceLocation": 11349,
+                "sourceLocation": 10935,
                 "sourceID": "house.abc"
             }
         },
@@ -18574,7 +18574,7 @@
             ],
             "id": "check bind",
             "customProperties": {
-                "sourceLocation": 11498,
+                "sourceLocation": 11084,
                 "sourceID": "house.abc"
             }
         },
@@ -18998,7 +18998,7 @@
             ],
             "id": "check banish",
             "customProperties": {
-                "sourceLocation": 11661,
+                "sourceLocation": 11247,
                 "sourceID": "house.abc"
             }
         },
@@ -19422,7 +19422,7 @@
             ],
             "id": "check torch",
             "customProperties": {
-                "sourceLocation": 11837,
+                "sourceLocation": 11423,
                 "sourceID": "house.abc"
             }
         },
@@ -19831,7 +19831,7 @@
             ],
             "id": "item error",
             "customProperties": {
-                "sourceLocation": 11975,
+                "sourceLocation": 11561,
                 "sourceID": "house.abc"
             }
         },
@@ -20300,7 +20300,7 @@
             ],
             "id": "use EMF",
             "customProperties": {
-                "sourceLocation": 12072,
+                "sourceLocation": 11658,
                 "sourceID": "house.abc"
             }
         },
@@ -20715,7 +20715,7 @@
             ],
             "id": "EMF here",
             "customProperties": {
-                "sourceLocation": 12502,
+                "sourceLocation": 12088,
                 "sourceID": "house.abc"
             }
         },
@@ -21124,7 +21124,7 @@
             ],
             "id": "EMF close",
             "customProperties": {
-                "sourceLocation": 12623,
+                "sourceLocation": 12209,
                 "sourceID": "house.abc"
             }
         },
@@ -21533,7 +21533,7 @@
             ],
             "id": "EMF Not",
             "customProperties": {
-                "sourceLocation": 12728,
+                "sourceLocation": 12314,
                 "sourceID": "house.abc"
             }
         },
@@ -22002,7 +22002,7 @@
             ],
             "id": "use box",
             "customProperties": {
-                "sourceLocation": 12855,
+                "sourceLocation": 12441,
                 "sourceID": "house.abc"
             }
         },
@@ -22417,7 +22417,7 @@
             ],
             "id": "box here",
             "customProperties": {
-                "sourceLocation": 13312,
+                "sourceLocation": 12898,
                 "sourceID": "house.abc"
             }
         },
@@ -22826,7 +22826,7 @@
             ],
             "id": "box close",
             "customProperties": {
-                "sourceLocation": 13455,
+                "sourceLocation": 13041,
                 "sourceID": "house.abc"
             }
         },
@@ -23235,7 +23235,7 @@
             ],
             "id": "box not",
             "customProperties": {
-                "sourceLocation": 13587,
+                "sourceLocation": 13173,
                 "sourceID": "house.abc"
             }
         },
@@ -23704,7 +23704,7 @@
             ],
             "id": "use bind",
             "customProperties": {
-                "sourceLocation": 13713,
+                "sourceLocation": 13299,
                 "sourceID": "house.abc"
             }
         },
@@ -24132,7 +24132,7 @@
             ],
             "id": "bind here",
             "customProperties": {
-                "sourceLocation": 14170,
+                "sourceLocation": 13756,
                 "sourceID": "house.abc"
             }
         },
@@ -24541,7 +24541,7 @@
             ],
             "id": "bind close",
             "customProperties": {
-                "sourceLocation": 14398,
+                "sourceLocation": 13984,
                 "sourceID": "house.abc"
             }
         },
@@ -24950,7 +24950,7 @@
             ],
             "id": "bind not",
             "customProperties": {
-                "sourceLocation": 14558,
+                "sourceLocation": 14144,
                 "sourceID": "house.abc"
             }
         },
@@ -25419,7 +25419,7 @@
             ],
             "id": "use banish",
             "customProperties": {
-                "sourceLocation": 14700,
+                "sourceLocation": 14286,
                 "sourceID": "house.abc"
             }
         },
@@ -25847,7 +25847,7 @@
             ],
             "id": "banish here",
             "customProperties": {
-                "sourceLocation": 15155,
+                "sourceLocation": 14741,
                 "sourceID": "house.abc"
             }
         },
@@ -26256,7 +26256,7 @@
             ],
             "id": "banish close",
             "customProperties": {
-                "sourceLocation": 15389,
+                "sourceLocation": 14975,
                 "sourceID": "house.abc"
             }
         },
@@ -26665,7 +26665,7 @@
             ],
             "id": "banish not",
             "customProperties": {
-                "sourceLocation": 15575,
+                "sourceLocation": 15161,
                 "sourceID": "house.abc"
             }
         },
@@ -27134,7 +27134,7 @@
             ],
             "id": "use torch",
             "customProperties": {
-                "sourceLocation": 15721,
+                "sourceLocation": 15307,
                 "sourceID": "house.abc"
             }
         },
@@ -27549,7 +27549,7 @@
             ],
             "id": "torch here",
             "customProperties": {
-                "sourceLocation": 16176,
+                "sourceLocation": 15762,
                 "sourceID": "house.abc"
             }
         },
@@ -27958,7 +27958,7 @@
             ],
             "id": "torch close",
             "customProperties": {
-                "sourceLocation": 16325,
+                "sourceLocation": 15911,
                 "sourceID": "house.abc"
             }
         },
@@ -28367,7 +28367,7 @@
             ],
             "id": "torch not",
             "customProperties": {
-                "sourceLocation": 16494,
+                "sourceLocation": 16080,
                 "sourceID": "house.abc"
             }
         },
@@ -28782,7 +28782,7 @@
             ],
             "id": "TV here",
             "customProperties": {
-                "sourceLocation": 16644,
+                "sourceLocation": 16230,
                 "sourceID": "house.abc"
             }
         },
@@ -29191,7 +29191,7 @@
             ],
             "id": "TV close",
             "customProperties": {
-                "sourceLocation": 16860,
+                "sourceLocation": 16446,
                 "sourceID": "house.abc"
             }
         },
@@ -29600,7 +29600,7 @@
             ],
             "id": "TV off",
             "customProperties": {
-                "sourceLocation": 17017,
+                "sourceLocation": 16603,
                 "sourceID": "house.abc"
             }
         },

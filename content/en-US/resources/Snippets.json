@@ -3,7 +3,7 @@
 
     "pic": "$SNIPPET_S3_RESOURCES_URI/images/$1",
 
-    "trumpet": "<audio src='https://sfb-framework.s3.amazonaws.com/examples/sounds/Trumpet_1.mp3' />",
+    "trumpet": "<audio src='https://sfb-framework.s3.amazonaws.com/examples/sounds/Trumpet_1.mp3'/>",
 
     "pause for": "<break time='$1'/>",
 
@@ -15,5 +15,15 @@
     
     "/kid": "</voice>",
 
-    "ocean wave": "<audio src='https://sfb-framework.s3.amazonaws.com/examples/sounds/ocean_wave.mp3'/>"
+    "ocean wave": "<audio src='https://sfb-framework.s3.amazonaws.com/examples/sounds/ocean_wave.mp3'/>",
+    
+    "growl": "<audio src='soundbank://soundlibrary/monsters/ghosts_demons/ghosts_demons_04'/>",
+
+    "laugh": "<audio src='soundbank://soundlibrary/human/amzn_sfx_laughter_giggle_02'/>",
+           
+    "cry": "<audio src='soundbank://soundlibrary/horror/horror_15'/>",
+    
+    "speak": "<audio src='soundbank://soundlibrary/horror/horror_12'/>",
+
+    "equip": "You selected the $1, $2, and $3. Very good."
 }
